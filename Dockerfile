@@ -7,6 +7,6 @@ WORKDIR /usr/src/goof
 
 RUN mvn install
 
-FROM tomcat:8
+FROM tomcat:7.0.100
 COPY --from=build /usr/src/goof/todolist-web-struts/target/todolist.war /usr/local/tomcat/webapps/todolist.war
 
