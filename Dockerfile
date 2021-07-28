@@ -3,7 +3,7 @@ FROM maven:3-jdk-8-slim as build
 RUN mkdir /usr/src/goof
 COPY . /usr/src/goof
 WORKDIR /usr/src/goof
-RUN --mount=target=$HOME/.m2,type=cache mvn install
+RUN --mount=target=/root/.m2,type=cache mvn install
 
 FROM tomcat:8.5.21
 
