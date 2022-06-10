@@ -8,7 +8,7 @@ else
 fi
 
 echo "📦 Building image ${DOCKER_ACCOUNT}/log4shell-server:latest ..."
-docker build -t ${DOCKER_ACCOUNT}/log4shell-server:latest $MYDIR/..
+docker build -t ${DOCKER_ACCOUNT}/log4shell-server:latest $MYDIR/.. --platform=amd64
 echo
 echo "🚚 Pushing image to DockerHub..."
 docker push ${DOCKER_ACCOUNT}/log4shell-server:latest
