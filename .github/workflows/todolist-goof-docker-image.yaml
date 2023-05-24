@@ -37,6 +37,7 @@ jobs:
         with:
           image: java-goof:latest
           args: --file=Dockerfile --severity-threshold=high --sarif-file=snyk-report.sarif
+          env: SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Upload Snyk results
         uses: github/codeql-action/upload-sarif@v2
