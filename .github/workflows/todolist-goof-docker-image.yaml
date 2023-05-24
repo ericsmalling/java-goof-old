@@ -39,12 +39,12 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: java-goof:latest
-          args: --file=todolist-goof/Dockerfile --severity-threshold=high --sarif-file=snyk-report.sarif
+          args: --file=todolist-goof/Dockerfile
 
       - name: Upload Snyk results
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk-report.sarif
+          sarif_file: snyk.sarif
 
       - name: Run container
         run: docker run -d --rm --name java-goof -p 8080:8080 java-goof:latest
