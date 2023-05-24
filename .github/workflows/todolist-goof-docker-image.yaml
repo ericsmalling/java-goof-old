@@ -34,6 +34,17 @@ jobs:
           push: false
           tags: java-goof:latest
 
+      - name: Snyk scan
+        uses: snyk/actions/docker@master
+        with:
+          image: java-goof:latest
+          args: --file=Dockerfile --severity-threshold=high --sarif-file=snyk-report.sarif
+
+      - name: Upload Snyk results
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk-report.sarif
+
       - name: Run container
         run: docker run -d --rm --name java-goof -p 8080:8080 java-goof:latest
 
