@@ -2,8 +2,6 @@ name: todolist-goof Docker image build and test
 
 on:
   push:
-    branches:
-      - 'main'
     paths:
       - 'todolist-goof/**'
       - '.github/workflows/todolist-goof-docker-image.yaml'
