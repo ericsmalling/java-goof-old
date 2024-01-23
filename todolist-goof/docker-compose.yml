@@ -2,7 +2,7 @@ version: "2"
 services:
   javagoof:
     build: .
-    image: javagoof:9
+    image: javagoof:cg
     container_name: javagoof
     environment:
       - DOCKER=1
