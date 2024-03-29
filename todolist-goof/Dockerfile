@@ -10,7 +10,7 @@ COPY todolist-web-common todolist-web-common
 COPY todolist-web-struts todolist-web-struts
 RUN --mount=target=$HOME/.m2,type=cache mvn install
 
-FROM tomcat:9.0.0
+FROM tomcat:9.0.87
 RUN mkdir /tmp/extracted_files
 COPY web.xml /usr/local/tomcat/conf/web.xml
 COPY --from=build /usr/src/goof/todolist-web-struts/target/todolist /usr/local/tomcat/webapps/todolist
